@@ -14,7 +14,7 @@ BlazeNet is a Python web framework inspired by Flask. It provides a simple and l
 You can install BlazeNet using pip:
 
 ```bash
-pip install blaze_net
+pip install blaze-net
 ```
 
 Or clone this repository to your local machine:

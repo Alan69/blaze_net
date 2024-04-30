@@ -1,8 +1,8 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='blaze_net',
-    version='1.0.0',
+    name='blaze-net',
+    version='1.0.1',
     author='McLovinAlan69',
     author_email='gameg1676@gmail.com',
     description='A Python web framework',

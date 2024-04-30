@@ -4,6 +4,7 @@ from werkzeug.routing import Map, Rule
 from jinja2 import Environment, FileSystemLoader
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from werkzeug.serving import run_simple
 
 class BlazeNet:
     def __init__(self, template_path='blaze_net/templates/'):
@@ -40,5 +41,16 @@ class BlazeNet:
         except HTTPException as e:
             # Handle HTTP exceptions
             return e
+    
+    def wsgi_app(self, environ, start_response):
+        request = Request(environ)
+        response = self.dispatch_request(request)
+        if isinstance(response, str):
+            # If response is a string, create a Response object
+            response = Response(response, content_type='text/html')
+        return response(environ, start_response)
+
+    def run(self, host='localhost', port=5000, use_reloader=False):
+        run_simple(host, port, self.wsgi_app, use_reloader=use_reloader)
 
 app = BlazeNet()

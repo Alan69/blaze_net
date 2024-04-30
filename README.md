@@ -31,11 +31,12 @@ from blaze_net import BlazeNet
 app = BlazeNet()
 
 @app.route('/')
-def index():
+def index(request):
     return 'Hello, BlazeNet!'
 
-if __name__ == '__main__':
-    app.run()
+if __name__ == "__main__":
+    from werkzeug.serving import run_simple
+    run_simple('localhost', 5000, app, use_reloader=True)
 ```
 
 ## Documentation

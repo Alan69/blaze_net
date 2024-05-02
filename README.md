@@ -100,7 +100,7 @@ Base.metadata.create_all(app.engine)
 ```
 
 ## Documentation
-For more information on how to use BlazeNet, please refer to the documentation.
+For more information on how to use BlazeNet, please refer to the documentation https://pypi.org/project/blaze-net/.
 
 ## Contributing
 Contributions are welcome! If you find a bug or have a feature request, please open an issue or submit a pull request.
